@@ -1,0 +1,8 @@
+#virtual env
+ict3104-venv/*
+
+#MacOS file
+.DS_Store
+
+#
+.ipynb_checkpoints/
