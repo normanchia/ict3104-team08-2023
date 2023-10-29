@@ -1,0 +1,51 @@
+pretrained_model_path: /content/FollowYourPose/checkpoints/stable-diffusion-v1-4
+output_dir: /content/ict3104-team08-2023/training/output_model
+train_data:
+  video_path: no path
+  prompt: None
+  n_sample_frames: 6
+  width: 256
+  height: 256
+  sample_start_idx: 0
+  sample_frame_rate: 4
+  dataset_set: train
+validation_data:
+  prompts:
+  - A Iron man on the beach
+  - A Spider man on the snow
+  - A Superman on the street
+  - A boy on the forest
+  video_length: 12
+  width: 256
+  height: 256
+  num_inference_steps: 25
+  guidance_scale: 12.5
+  use_inv_latent: false
+  num_inv_steps: 50
+  dataset_set: val
+validation_steps: 100
+trainable_modules:
+- attn1.to_q
+- attn2.to_q
+- attn_temp
+- conv_temporal
+train_batch_size: 1
+max_train_steps: 5
+learning_rate: 3.0e-05
+scale_lr: false
+lr_scheduler: constant
+lr_warmup_steps: 0
+adam_beta1: 0.9
+adam_beta2: 0.999
+adam_weight_decay: 0.01
+adam_epsilon: 1.0e-08
+max_grad_norm: 1.0
+gradient_accumulation_steps: 1
+gradient_checkpointing: false
+checkpointing_steps: 1000
+resume_from_checkpoint: null
+mixed_precision: 'no'
+use_8bit_adam: false
+enable_xformers_memory_efficient_attention: true
+seed: 33
+skeleton_path: ./pose_example/vis_kun_pose2.mov
