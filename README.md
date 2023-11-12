@@ -1,6 +1,6 @@
 # ICT3104 Team 08 Project
 
-Open the notebook in Google Colab:
+Open the notebook in Google Colab: 
 [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/normanchia/ict3104-team08-2023/blob/main/ict3104_team08.ipynb)
 
 This is the implementation of our ICT3104 Team Project done by:
