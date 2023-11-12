@@ -15,7 +15,6 @@ This repository includes the Jupyter notebook and instructions to run it. The pr
 
 ## Table of Contents
 
-- [Installation](#installation)
 - [Usage](#usage)
 - [File Structure](#file-structure)
 
