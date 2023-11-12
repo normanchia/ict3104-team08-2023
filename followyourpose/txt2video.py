@@ -173,7 +173,7 @@ def main(
             samples.append(sample)
         samples = torch.concat(samples)
         save_path = f"{output_dir}/inference/{output_dir_name}/{now}.gif"
-        save_videos_grid(samples, save_path)
+        # save_videos_grid(samples, save_path)
         logger.info(f"Saved samples to {output_dir}/inference/{output_dir_name}")
         # logger.info(f"Saved samples to {save_path}")
 
