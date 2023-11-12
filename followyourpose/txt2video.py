@@ -169,7 +169,7 @@ def main(
             sample = validation_pipeline(prompt, generator=generator, latents=ddim_inv_latent,
                                         skeleton_path=skeleton_path,
                                         **validation_data).videos
-            save_videos_grid(sample, f"{output_dir}/inference/{output_dir}/{prompt}.gif")
+            save_videos_grid(sample, f"{output_dir}/inference/{output_dir_name}/{prompt}.gif")
             samples.append(sample)
         samples = torch.concat(samples)
         save_path = f"{output_dir}/inference/{output_dir_name}/{now}.gif"
