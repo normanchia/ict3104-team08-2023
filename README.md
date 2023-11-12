@@ -17,70 +17,18 @@ This repository includes the Jupyter notebook and instructions to run it. The pr
 
 - [Installation](#installation)
 - [Usage](#usage)
-- [Environment Setup](#environment-setup)
 - [File Structure](#file-structure)
-- [Updating Requirements](#updating-requirements)
-
-## Installation
-
-1. **Clone the Repository**:
-
-    ```bash
-    git clone https://github.com/normanchia/ict3104-team08-2023.git
-    ```
-
-2. **Install Requirements**:
-
-    ```bash
-    pip install -r requirements.txt
-    ```
 
 ## Usage
 
-1. **Activate the Virtual Environment**:
-
-    - On MacOS and Linux:
-
-        ```bash
-        source ict3104-venv/bin/activate
-        ```
-
-    - On Windows:
-
-        ```bash
-        .\ict3104-venv\Scripts\activate
-        ```
-
-2. **Start Jupyter Notebook**:
-
-    ```bash
-    jupyter notebook
-    ```
-
-3. **Open `ict3104_team08.ipynb`**: You can now navigate to the file in the Jupyter Notebook web interface and start using it.
-
-## Environment Setup
-
-The Jupyter Notebook contains commands to set up the environment. These commands are idempotent, meaning running them multiple times won't cause issues.
-
-1. **Check Python Version**: Ensures you're running Python 3.x.
-2. **Create and Activate Virtual Environment**: Isolates your project dependencies.
-3. **Add venv to Jupyter**: Allows Jupyter to recognize your virtual environment.
-4. **Install Requirements**: Installs packages from `requirements.txt`.
-5. **Update Requirements**: You can freeze the current state of environment packages to `requirements.txt`.
+1. **Open the colab notebook and follow the instructions there.**
 
 ## File Structure
-
+- `configs`: Contains the inference and training configurations.
+- `followyourpose`: Contains part of the FollowYourPose repo that contains modified files that are used by the notebook.
+- `inputs`: Contains the captions used for training, dataset videos used for inference and example skeleton.
+- `training`: Contains the configs, dataset videos and captions used for training, and an example output model.
 - `README.md`: This file.
 - `ict3104_team08.ipynb`: The main Jupyter Notebook.
-- `ict3104-venv`: Directory for the virtual environment.
-- `input_data`: Directory for input data (if any).
 - `requirements.txt`: Required packages.
-
-## Updating Requirements
-
-If you install additional packages and want to update `requirements.txt`:
-
-```bash
-pip freeze > requirements.txt
-```
+- `requirements-2.txt`: Additional required packages.
