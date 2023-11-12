@@ -44,6 +44,7 @@ def main(
     validation_data: Dict,
     validation_steps: int = 100,
     train_batch_size: int = 1,
+    output_dir_name: str = "output_ict3104",
     gradient_accumulation_steps: int = 1,
     gradient_checkpointing: bool = True,
     resume_from_checkpoint: Optional[str] = None,
@@ -168,10 +169,10 @@ def main(
             sample = validation_pipeline(prompt, generator=generator, latents=ddim_inv_latent,
                                         skeleton_path=skeleton_path,
                                         **validation_data).videos
-            save_videos_grid(sample, f"{output_dir}/inference/sample-{global_step}-{str(seed)}-{now}/{prompt}.gif")
+            save_videos_grid(sample, f"{output_dir}/inference/{output_dir}/{prompt}.gif")
             samples.append(sample)
         samples = torch.concat(samples)
-        save_path = f"{output_dir}/inference/sample-{global_step}-{str(seed)}-{now}.gif"
+        save_path = f"{output_dir}/inference/{output_dir_name}/{now}.gif"
         save_videos_grid(samples, save_path)
         logger.info(f"Saved samples to {save_path}")
 
@@ -181,5 +182,9 @@ if __name__ == "__main__":
     parser = argparse.ArgumentParser()
     parser.add_argument("--config", type=str)
     parser.add_argument("--skeleton_path", type=str)
+    parser.add_argument("--output_dir_name", type=str, default="output_ict3104", help="Name of the output video dir")
     args = parser.parse_args()
-    main(**OmegaConf.load(args.config), skeleton_path = args.skeleton_path)
+    config = OmegaConf.load(args.config)
+    if 'output_dir_name' in config:
+        del config['output_dir_name']
+    main(**config, skeleton_path=args.skeleton_path, output_dir_name=args.output_dir_name)
