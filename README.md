@@ -3,6 +3,9 @@
 Open the notebook in Google Colab: 
 [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/normanchia/ict3104-team08-2023/blob/main/ict3104_team08.ipynb)
 
+Video demo:
+[View demo in YouTube](https://www.youtube.com/watch?v=zjx09BY-SP8)
+
 This is the implementation of our ICT3104 Team Project done by:
 | Student | Student ID |
 | ------------- |:-------------:|
